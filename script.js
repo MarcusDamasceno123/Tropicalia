@@ -11,12 +11,32 @@ const botaoSelecionado=botaoDeAcessibilidade.getAttribute('aria-expanded')=== 't
     
 botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado)
 
-    })
-    
-    
-    const aumentaFonteBotao = document.getElementById('aumentar-fonte');
-    const diminuiFonteBotao = document.getElementById('diminuir-fonte');
+})
+        
+const aumentaFonteBotao = document.getElementById('aumentar-fonte');
+const diminuiFonteBotao = document.getElementById('diminuir-fonte');
 
-    const alternaConstraste = document.getElementById('alterna-contraste');
-    })
+const alternaConstraste = document.getElementById('alterna-contraste');
 
+let tamanhoAtualFonte = 1;
+
+aumentaFonteBotao.addEventListener('click', function(){
+        tamanhoAtualFonte += 0.1;
+        document.body.style.fontSize = `${tamanhoAtualFonte}rem`
+})
+
+diminuiFonteBotao.addEventListener('click', function(){
+        tamanhoAtualFonte -= 0.1;
+        document.body.style.fontSize = `${tamanhoAtualFonte}rem`
+})
+
+alternaConstraste.addEventListener('click', function(){
+        document.body.classList.toggle('alto-contraste')
+})
+
+})
+
+ScrollReveal().reveal('#inicio', { delay: 500});
+ScrollReveal().reveal('#tropicalia', { delay: 500});
+ScrollReveal().reveal('#galeria', { delay: 500});
+ScrollReveal().reveal('#contato', { delay: 500});
